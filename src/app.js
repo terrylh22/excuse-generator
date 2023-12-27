@@ -4,11 +4,15 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+import { Button } from "bootstrap";
 
 window.onload = () => {
   //write your code here
   let randomNumber = Math.floor(Math.random() * 200);
-  document.querySelector("#excuse").innerHTML = generateExcuse();
+  let excuseButton = document.getElementById("button");
+  newExcuse();
+
+  excuseButton.addEventListener("click", newExcuse);
 };
 
 let generateExcuse = () => {
@@ -39,4 +43,6 @@ let generateExcuse = () => {
   return generatedExcuse;
 };
 
-//excuse example = A dog ate my homework!
+let newExcuse = () => {
+  document.querySelector("#excuse").innerHTML = generateExcuse();
+};
